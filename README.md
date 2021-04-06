@@ -8,5 +8,5 @@ PHP Library to Wrap Trustpilot API
 # Installation
 
 ```
-$ composer require ramos94/php-asendia-api
+$ composer require ramos94/php-trustpilot-api
 ```
