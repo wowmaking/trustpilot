@@ -122,11 +122,11 @@ class ProductReviews extends AbstractApi{
     public function getReviewsSummary($businessUnitId, $data)
     {
         return json_decode(
-            $this->api->get('private/product-reviews/business-units/'. $businessUnitId,
+            $this->api->get('product-reviews/business-units/'. $businessUnitId,
                 ['query' =>
                     [
-                       'page' => $data['page'],
-                       'perPage' => $data['perPage']
+                       'sku' => $data['sku'],
+                       'apikey' => $data['apikey']
                     ]
                 ]
             ));
