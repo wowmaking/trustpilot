@@ -1,11 +1,12 @@
 {
     "name": "ramos94/php-trustpilot-api",
-    "description": "Simple PHP library for TrustPilot API",
+    "description": "Api Client to connect to trustpilot Services",
     "license": "MIT",
     "authors": [
         {
-            "name": "Graphem Solutions",
-            "email": "info@graphem.ca"
+            "name": "Carlos Ramos Torres",
+            "email": "carlos.ramos@latostadora.com",
+            "role": "Developer"
         }
     ],
     "require": {

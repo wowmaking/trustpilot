@@ -1,2 +1,7 @@
-# trustpilot
-Light TrustPilot API library for PHP
+README
+A PHP library for dealing with Trustpilot
+
+PHP Library to Wrap Trustpilot API
+
+Installation
+$ composer require ramos94/php-trustpilot-api
