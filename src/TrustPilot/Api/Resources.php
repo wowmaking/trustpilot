@@ -17,7 +17,25 @@ namespace TrustPilot\Api;
 use TrustPilot\TrustPilot;
 
 class Resources extends AbstractApi{
-  
-  // Incomplete
+
+    /**
+     * Get stars image
+     * https://developers.trustpilot.com/resources-api#get-the-star-image-resources
+     *
+     *
+     * @param string|array
+     * @return \stdClass
+     */
+    public function getStarsImage($stars, $data)
+    {
+        return json_decode(
+            $this->api->get('resources/images/stars/'. $stars,
+                            ['query' =>
+                                [
+                                    'apikey' => $data['apikey']
+                                ]
+                            ]
+            ));
+    }
     
 }
