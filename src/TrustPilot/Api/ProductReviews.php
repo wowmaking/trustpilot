@@ -30,7 +30,7 @@ class ProductReviews extends AbstractApi{
      */
     public function createInvitationLink($businessUnitId, $data)
     {
-	$data['locale'] = isset($data['locale']) ? $data['locale'] : 'en-US' ;
+        $data['locale'] = isset($data['locale']) ? $data['locale'] : 'en-US' ;
 
         return json_decode(
             $this->api->post('private/product-reviews/business-units/'. $businessUnitId .'/invitation-links',array('json' => $data)));
@@ -48,15 +48,40 @@ class ProductReviews extends AbstractApi{
     {
         return json_decode(
             $this->api->get('private/product-reviews/business-units/'. $businessUnitId .'/reviews',
-                ['query' =>
-                    [
-                       'page' => $data['page'],
-                       'perPage' => $data['perPage'],
-                       'sku' => $data['sku'],
-                       'language' => $data['language'],
-                       'state' => $data['state'],
-                    ]
-                ]
+                            ['query' =>
+                                [
+                                    'page' => $data['page'],
+                                    'perPage' => $data['perPage'],
+                                    'sku' => $data['sku'],
+                                    'language' => $data['language'],
+                                    'state' => $data['state'],
+                                ]
+                            ]
+            ));
+    }
+
+    /**
+     * Get private product reviews
+     * https://developers.trustpilot.com/product-reviews-api#get-product-reviewsnk
+     *
+     *
+     * @param  string, array
+     * @return \stdClass
+     */
+    public function getReviews($businessUnitId, $data)
+    {
+        return json_decode(
+            $this->api->get('product-reviews/business-units/'. $businessUnitId .'/reviews',
+                            ['query' =>
+                                [
+                                    'page' => $data['page'],
+                                    'perPage' => $data['perPage'],
+                                    'sku' => $data['sku'],
+                                    'language' => $data['language'],
+                                    'stars' => $data['stars'],
+                                    'apikey' => $data['apikey']
+                                ]
+                            ]
             ));
     }
 
@@ -72,12 +97,12 @@ class ProductReviews extends AbstractApi{
     {
         return json_decode(
             $this->api->get('private/product-reviews/business-units/'. $businessUnitId .'/summaries',
-                ['query' =>
-                    [
-                       'page' => $data['page'],
-                       'perPage' => $data['perPage']
-                    ]
-                ]
+                            ['query' =>
+                                [
+                                    'page' => $data['page'],
+                                    'perPage' => $data['perPage']
+                                ]
+                            ]
             ));
     }
 
@@ -105,10 +130,10 @@ class ProductReviews extends AbstractApi{
      */
     public function createReviewConversation($reviewId)
     {
-       $response = json_decode(
+        $response = json_decode(
             $this->api->post('private/product-reviews/'. $reviewId .'/create-conversation'));
 
-       return $response['conversationId'];
+        return $response['conversationId'];
     }
 
     /**
@@ -123,12 +148,12 @@ class ProductReviews extends AbstractApi{
     {
         return json_decode(
             $this->api->get('product-reviews/business-units/'. $businessUnitId,
-                ['query' =>
-                    [
-                       'sku' => $data['sku'],
-                       'apikey' => $data['apikey']
-                    ]
-                ]
+                            ['query' =>
+                                [
+                                    'sku' => $data['sku'],
+                                    'apikey' => $data['apikey']
+                                ]
+                            ]
             ));
     }
 
