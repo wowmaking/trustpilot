@@ -186,7 +186,7 @@ class TrustPilot
     public function resources()
     {
         $this->setAdapterWithApikey();
-        return new Consumer($this);
+        return new Resources($this);
     }
 
     /**
