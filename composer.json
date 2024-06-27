@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^6.1",
+        "guzzlehttp/guzzle": "^7",
         "nesbot/carbon": "^2.0"
     },
     "require-dev": {
